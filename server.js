@@ -1,19 +1,19 @@
-let express  = require('express');
-let app      = express();
-let port     = process.env.PORT || 8080;
+let express = require('express');
+let app = express();
+let port = process.env.PORT || 8080;
 let mongoose = require('mongoose');
 let passport = require('passport');
-let flash    = require('connect-flash');
+let flash = require('connect-flash');
 
-let morgan       = require('morgan');
+let morgan = require('morgan');
 let cookieParser = require('cookie-parser');
-let bodyParser   = require('body-parser');
-let session      = require('express-session');
+let bodyParser = require('body-parser');
+let session = require('express-session');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/node-account-management',{
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/node-account-management', {
   useMongoClient: true,
-}); 
+});
 
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
